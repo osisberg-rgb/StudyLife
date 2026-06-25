@@ -8,6 +8,9 @@ export function useColorScheme() {
   const [hasHydrated, setHasHydrated] = useState(false);
 
   useEffect(() => {
+    // Standard hydrerings-flag til statisk web-rendering: sættes præcis én gang
+    // efter mount. Reglen er en falsk positiv her.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasHydrated(true);
   }, []);
 
